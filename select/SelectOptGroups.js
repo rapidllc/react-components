@@ -21,9 +21,8 @@ const SelectOptGroups = ({
   groupedOptions
 }) => {
   return (
-    <select className="Select__select" name="Window" placeholder="">
+    <select className="Select__select" name="Window" placeholder="" onChange={onChange}>
       {Object.keys(groupedOptions).map((group, index) => {
-        console.log('group ', group)
         return (
           <optgroup key={index} label={group}>
             {renderOptions(groupedOptions[group], group)}
