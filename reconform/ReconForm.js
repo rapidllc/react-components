@@ -14,7 +14,7 @@ const ReconhtmlForm = ({
   selectProjectionsFile,
   selectAttenuationFile,
   reconstructFile
-   
+
 }) => {
 
   const [projectionsFile, setProjectionsFile] = useState('.dcm');
@@ -31,7 +31,7 @@ const ReconhtmlForm = ({
     setRadioChangeCDR(event.target.value);
   }
 
-  
+
   const SetRadioChangeAttenuation = (event) => {
     console.log('SetRadioChangeAttenuation ', radioChangeAttenuation)
     setRadioChangeAttenuation(event.target.value);
@@ -124,62 +124,66 @@ const ReconhtmlForm = ({
           </select>
         </label>
 
-{/* these should be radio buttons one for Attenuation and the other for both Attenuation && Scatter
+        {/* these should be radio buttons one for Attenuation and the other for both Attenuation && Scatter
 
 SetRadioChangeAttenuation
 
 */}
         <div>
 
-        <label htmlFor="Attenuation" className="BaseField__label">
-          <input type="radio" id="Attenuation" name="Attenuation" value="Attenuation"
-             checked={radioChangeAttenuation === "Attenuation"}
-             onChange={SetRadioChangeAttenuation}
-              />Attenuation:
+          <label htmlFor="Attenuation" className="BaseField__label">
+            <input type="radio" id="Attenuation" name="Attenuation" value="Attenuation"
+              checked={radioChangeAttenuation === "Attenuation"}
+              onChange={SetRadioChangeAttenuation}
+            />Attenuation:
         </label>
-        <label htmlFor="AttenuationScatter" className="BaseField__label">
-          <input type="radio" id="AttenuationScatter" name="AttenuationScatter" value="AttenuationScatter" 
-            checked={radioChangeAttenuation === "AttenuationScatter"}
-            onChange={SetRadioChangeAttenuation}
+          <br />
+          <label htmlFor="AttenuationScatter" className="BaseField__label">
+            <input type="radio" id="AttenuationScatter" name="AttenuationScatter" value="AttenuationScatter"
+              checked={radioChangeAttenuation === "AttenuationScatter"}
+              onChange={SetRadioChangeAttenuation}
             />Attenuation and Scatter:
         </label>
 
-       
-        </div>
 
+        </div>
+        <hr />
 
         <div>
-        <label htmlFor="Full_CDR" className="BaseField__label">
-          <input type="radio" id="Full_CDR" name="Full_CDR" value="Full_CDR"
-             checked={radioChangeCDR === "Full_CDR"}
-             onChange={SetRadioChangeCDR}
-              />Full CDR
+          <label htmlFor="Full_CDR" className="BaseField__label">
+            <input type="radio" id="Full_CDR" name="Full_CDR" value="Full_CDR"
+              checked={radioChangeCDR === "Full_CDR"}
+              onChange={SetRadioChangeCDR}
+            />Full CDR
         </label>
-        <label htmlFor="Geometric_CDR" className="BaseField__label">
-          <input type="radio" id="Geometric_CDR" name="Geometric_CDR" value="Geometric_CDR" 
-            checked={radioChangeCDR === "Geometric_CDR"}
-            onChange={SetRadioChangeCDR}
+          <br />
+          <label htmlFor="Geometric_CDR" className="BaseField__label">
+            <input type="radio" id="Geometric_CDR" name="Geometric_CDR" value="Geometric_CDR"
+              checked={radioChangeCDR === "Geometric_CDR"}
+              onChange={SetRadioChangeCDR}
             />Geometric CDR
         </label>
-        <label htmlFor="Neither" className="BaseField__label">
-          <input type="radio" id="Neither" name="Neither" value="Neither" 
-            checked={radioChangeCDR === "Neither"}
-            onChange={SetRadioChangeCDR}
+          <br />
+          <label htmlFor="Neither" className="BaseField__label">
+            <input type="radio" id="Neither" name="Neither" value="Neither"
+              checked={radioChangeCDR === "Neither"}
+              onChange={SetRadioChangeCDR}
             />Neither
         </label>
         </div>
-      
-      <ActionButton red children={"Select .dcm"} onClick={selectProjectionsFile} />
+        <br />
+        <hr />
+        <ActionButton red children={"Select .dcm"} onClick={selectProjectionsFile} />
         <br />
         <label className="BaseField__label" htmlFor="Attenuationfile">Attenuation File:
-          <input type="text" className="Input" name="Attenuationfile" 
-          value={projectionsFile} onChange={() => setProjectionsFile(value)} 
+          <input type="text" className="Input" name="Attenuationfile"
+            value={projectionsFile} onChange={() => setProjectionsFile(value)}
           />
         </label>
 
         <ActionButton red children={"Reconstruct"} onClick={reconstructFile} />
-      
-        </fieldset>
+
+      </fieldset>
     </>
   );
 
