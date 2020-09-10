@@ -18,15 +18,9 @@ const ReconhtmlForm = ({
 }) => {
 
   const [projectionsFile, setProjectionsFile] = useState('.dcm');
-  const [parametersFile, setParametersFile] = useState('.prj');
   const [radioChangeAttenuation, setRadioChangeAttenuation] = useState('');
-  const [checkboxChange, setCheckboxChange] = useState('');
   const [radioChangeCDR, setRadioChangeCDR] = useState('');
-
-  const SetCheckboxChange = (event) => {
-    setCheckboxChange(event.target.value);
-  }
-
+ 
   const SetRadioChangeCDR = (event) => {
     setRadioChangeCDR(event.target.value);
   }
