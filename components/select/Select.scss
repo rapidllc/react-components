@@ -1,0 +1,58 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.Select {
+  width: 100%;
+  position: relative;
+
+  &__select {
+    width: 90%;
+    height: 35px;
+    border-radius: 4px;
+    padding: $paddingSmall;
+    padding-left: $paddingLarge;
+    padding-right: 50px;
+    margin-top: 11px;
+    margin-bottom: $formErrorMargin;
+    outline: none;
+    border: $borderWidth solid $border;
+    appearance: none;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+
+    &--rounded {
+      border-radius: 40px;
+    }
+
+    &--error {
+      outline: none;
+      cursor: pointer;
+      border: $borderWidth solid $red;
+    }
+
+    &--narrow {
+      padding: 0 4px;
+      margin-bottom: 11px;
+    }
+
+    &--readonly {
+      background-color: $body;
+      color: $text_dark;
+    }
+
+    option {
+      font-size: $fontSizeH6;
+    }
+
+    background-color: $white;
+    background-image: url(../assets/images/triangle_down.svg);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: right 20px center;
+    background-clip: border-box;
+    
+    &--noArrow {
+      background-image: none;
+    }
+  }
+}

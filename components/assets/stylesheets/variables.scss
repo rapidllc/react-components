@@ -1,0 +1,42 @@
+$spacingUnit: 8px;
+
+$margin: (2 * $spacingUnit);
+$marginSmall: (0.5 * $margin);
+$marginLarge: (1.5 * $margin);
+
+$formErrorMargin: 28px;
+
+$padding: (2 * $spacingUnit);
+$paddingSmall: (0.5 * $padding);
+$paddingLarge: (1.5 * $padding);
+
+$borderWidth: 1px;
+$borderRadius: 4px;
+
+$fontFamily: "Raleway", sans-serif;
+
+$fontSizeSmall: 10px;
+$fontSizeMedium: 11px;
+$fontSize: 12px;
+
+$fontSizeH1: 34px;
+$fontSizeH2: 27px;
+$fontSizeH3: 24px;
+$fontSizeH4: 21px;
+$fontSizeH5: 16px;
+$fontSizeH6: 14px;
+$fontSizeH7: 13px;
+
+$topZIndex: 10000;
+
+// grid variables
+$av-enable-responsive: true;
+$av-enable-grid-center: true;
+$av-enable-grid-cell-center: true;
+$av-enable-grid-middle: true;
+$av-gutter: $margin;
+
+$av-breakpoints: (
+  "small": "screen and (max-width: 1360px)",
+  "large": "screen and (min-width: 1361px)",
+);

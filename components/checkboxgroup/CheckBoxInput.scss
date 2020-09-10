@@ -1,0 +1,87 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+$width: 2 * $spacingUnit - 4px;
+$height: 2 * $spacingUnit - 4px;
+
+.CheckBoxInput {
+  font-family: $fontFamily;
+	width: 100%;
+  margin: ($margin) auto;
+  margin-bottom: $formErrorMargin;
+  display: block;
+
+  &--no-margin {
+    margin: auto;
+  }
+
+  &--small-margin {
+    margin: 4px auto;
+  }
+}
+
+.CheckBoxInput-container {
+  position: relative;
+  
+	&__input {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+
+    &:checked + .CheckBoxInput-container__label {
+      font-family: $fontFamily;
+    font-weight: 700;
+    font-size: $fontSize;
+    text-transform: uppercase;
+      background-color: $orange;
+      border: none;
+      width: $width;
+      height: $height;
+      border: solid 2px $orange;
+    }
+
+    &:checked + .CheckBoxInput-container__label:before {
+      opacity: 1;
+    }
+  }
+
+  .CheckBoxInput-container__label {
+    z-index: 2;
+    width: $width;
+    height: $height;
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 2px $border;
+    position: absolute;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      width: $spacingUnit;
+      height: $spacingUnit - 4px;
+      border: 3px solid $white;
+      position: absolute;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      margin: auto;
+      top: -4px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      border-radius: 1px;
+    }
+  }
+}
+
+.CheckBoxInput-text {
+  font-size: $fontSize;
+  line-height: 2 * $spacingUnit;
+  margin-left: $marginLarge;
+  display: inline-block;
+
+  &--readonly {
+    color: $placeholder;
+  }
+}

@@ -1,0 +1,62 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.Input {
+  width: 90%;
+  height: 30px;
+  border-radius: 4px;
+  border: $borderWidth solid $border;
+  padding: 0 ($marginLarge);
+  margin-top: 11px;
+  margin-bottom: $formErrorMargin;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+
+  &::placeholder {
+    font-family: $fontFamily;
+    font-weight: 600;
+    font-size: $fontSize;
+    color: $placeholder;
+  }
+
+  &:hover {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+    border: $borderWidth solid $border_dark;
+  }
+
+  &--rounded {
+    border-radius: 40px;
+  }
+
+  &--narrow {
+    padding: 0 4px;
+    margin-bottom: 11px;
+  }
+
+  &--tableCell {
+    padding: 0 4px;
+    margin: 0;
+    border: none;
+    border-left: $borderWidth solid $border;
+    border-radius: 0px;
+  }
+
+  &--error {
+    outline: none;
+    cursor: pointer;
+    border: $borderWidth solid $red;
+  }
+  
+  &--readonly {
+    background-color: $body;
+    color: $text_dark;
+  }
+
+  &--transparent {
+    background: transparent;
+  }
+}

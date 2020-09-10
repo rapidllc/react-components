@@ -1,0 +1,71 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "variables.scss";
+
+.Box {
+  margin-top: $margin;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+
+  &__header {
+    clear: both;
+    @include clearfix();
+  }
+
+  &__content {
+    @include box();
+    border-radius: 0 0 4px 4px;
+    border: none;
+    font-size: $fontSize;
+
+    &--no-padding {
+      padding: 0;
+    }
+  }
+}
+
+.Box-header {
+  @include boxHeader();
+  border: none;
+
+  &--white {
+    background-color: $white;
+    color: $text_2;
+  }
+
+  &--collapsible {
+    cursor: pointer;
+  }
+
+  &__title {
+    float: left;
+  }
+
+  &__action {
+    float: right;
+    color: $orange;
+    cursor: pointer;
+  }
+
+  &__collapse {
+    margin-top: -3px;
+    border: 5px solid transparent;
+    float: left;
+    margin-right: $margin / 2;
+    border-color: transparent transparent $border transparent;
+    transition: all ease 0.3s;
+
+    cursor: pointer;
+
+    &:hover {
+      border-color: transparent transparent $orange transparent;
+    }
+
+    &--collapsed {
+      margin-top: 2px;
+      transform: rotate(180deg);
+    }
+  }
+}

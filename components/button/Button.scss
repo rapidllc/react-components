@@ -1,0 +1,48 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/mixins.scss";
+@import "../assets/stylesheets/variables.scss";
+
+// .Input {
+//   width: 100%;
+//   height: 30px;
+//   border-radius: 4px;
+//   border: 1px solid #c3c3c3;
+//   padding: 0 24px;
+//   margin-top: 11px;
+//   margin-bottom: 28px;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   font-family: Raleway,sans-serif;
+// }
+
+.ActionButton {
+  @include button($white, $orange);
+  border: $borderWidth solid;
+  border-radius: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-weight: 700;
+  width: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+
+  &:hover {
+    border-color: $border;
+    background-color: $border;
+  }
+
+  &__icon {
+    height: 14px;
+    margin-right: 8px;
+  }
+
+  &--red {
+    @include button($cta, $white);
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+}

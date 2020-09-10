@@ -1,0 +1,86 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/mixins.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.CheckBoxGroup {
+  margin: 11px 0;
+  margin-bottom: $formErrorMargin;
+  border: $borderWidth solid $border;
+  border-radius: 4px;
+  padding: 0 $padding;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-top: 5px;
+
+  &--large {
+    max-height: 300px;
+  }
+
+  &--search {
+    min-height: 300px;
+  }
+
+  &--error {
+    border: $borderWidth solid $red;
+  }
+
+  &__item {
+    width: 50%;
+    display: inline-block;
+    border-bottom: 0px solid $border;
+    padding: 1px 0;
+    margin-bottom: 5px;
+  }
+
+  &__divider {
+    width: 100%;
+    clear: both;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: $border;
+  }
+}
+
+.CheckBoxGroup-search {
+  width: 170px;
+  position: absolute;
+  top: 6px;
+  padding-left: 4px;
+  right: 144px;
+
+  font-size: $fontSize;
+
+  border: $borderWidth solid $border;
+  border-radius: 4px;
+
+  font-family: $fontFamily;
+
+  &:focus {
+    outline: none;
+    border: $borderWidth solid $border_dark;
+  }
+}
+
+.CheckBoxGroup-clear {
+  position: absolute;
+  top: 10px;
+  right: 0;
+
+  cursor: pointer;
+  font-size: $fontSize;
+  color: $label;
+}
+
+.CheckBoxGroup-selectAll {
+  position: absolute;
+  top: 10px;
+  right: 80px;
+
+  cursor: pointer;
+  font-size: $fontSize;
+  color: $label;
+}
+
+.CheckBoxGroup-selected {
+  font-size: $fontSize;
+}
