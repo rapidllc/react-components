@@ -1,0 +1,16 @@
+@import "../assets/stylesheets/colors.scss";
+
+.progress-bar {
+    position: relative;
+    height: 20px;
+    width: auto;
+    border-radius: 50px;
+  }
+  
+  .filler {
+    background: $green;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+  }
+  

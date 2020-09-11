@@ -10,6 +10,10 @@ import Select from '../select/Select.js';
 import SelectOptGroups from '../select/SelectOptGroups.js';
 import '../button/Button.scss';
 
+import ProgressBar from '../progressbar/ProgressBar.js';
+
+
+
 const ReconhtmlForm = ({
   handleSelectProjectionsFile,
   handleAttenuationCompensations,
@@ -194,7 +198,7 @@ const ReconhtmlForm = ({
         </label>
         
         <ActionButton red children={"Reconstruct"} onClick={handleReconButton} />
-
+        
       </fieldset>
     </>
   );
