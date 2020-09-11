@@ -193,7 +193,7 @@ const ReconhtmlForm = ({
           />
         </label>
         
-        <ActionButton red children={"Reconstruct"} onClick={handleReconButton} localStyle={"width: 100%;"} />
+        <ActionButton red children={"Reconstruct"} onClick={handleReconButton} />
 
       </fieldset>
     </>
