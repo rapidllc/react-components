@@ -10,6 +10,7 @@ const ActionButton = ({
   iconSrc,
   red,
   fullWidth,
+  localStyle
 }) => (
   <button
     className={classNames('uicomponent control buttoncontrol wizardbutton ActionButton', {
@@ -19,6 +20,7 @@ const ActionButton = ({
     onClick={onClick}
     onKeyPress={onClick}
     type="button"
+    style={localStyle}
   >
     {iconSrc && <img alt="Action" src={iconSrc} className="ActionButton__icon" />}
     {children}
