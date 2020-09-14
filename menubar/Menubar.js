@@ -4,44 +4,56 @@ import PropTypes from 'prop-types';
 import Menu, { SubMenu, Item as MenuItem, Divider } from 'rc-menu';
 import 'rc-menu/assets/index.css';
 import animate from 'css-animation';
+import './Menubar.scss';
 
+// rc-menu-submenu-selected
+
+//append to document.getElementById("centerpanel")
+const Menubar = ({
+  handleAboutCommand,
+  handleNewCommand,
+  handleOpenCommand,
+  handleUploadEvent
+ }) => {
+
+ 
 
 const animation = {
-  enter(node, done) {
-    let height;
-    return animate(node, 'rc-menu-collapse', {
-      start() {
-        height = node.offsetHeight;
-        node.style.height = 0;
-      },
-      active() {
-        node.style.height = `${height}px`;
-      },
-      end() {
-        node.style.height = '';
-        done();
-      },
-    });
-  },
+  // enter(node, done) {
+  //   let height;
+  //   return animate(node, 'rc-menu-collapse', {
+  //     start() {
+  //       height = node.offsetHeight;
+  //       node.style.height = 0;
+  //     },
+  //     active() {
+  //       node.style.height = `${height}px`;
+  //     },
+  //     end() {
+  //       node.style.height = '';
+  //       done();
+  //     },
+  //   });
+  // },
 
-  appear() {
-    return this.enter.apply(this, arguments);
-  },
+  // appear() {
+  //   return this.enter.apply(this, arguments);
+  // },
 
-  leave(node, done) {
-    return animate(node, 'rc-menu-collapse', {
-      start() {
-        node.style.height = `${node.offsetHeight}px`;
-      },
-      active() {
-        node.style.height = 0;
-      },
-      end() {
-        node.style.height = '';
-        done();
-      },
-    });
-  },
+  // leave(node, done) {
+  //   return animate(node, 'rc-menu-collapse', {
+  //     start() {
+  //       node.style.height = `${node.offsetHeight}px`;
+  //     },
+  //     active() {
+  //       node.style.height = 0;
+  //     },
+  //     end() {
+  //       node.style.height = '';
+  //       done();
+  //     },
+  //   });
+  // },
 };
 
 
@@ -54,12 +66,17 @@ function handleClick(info) {
 const children = [
 
   <SubMenu title={<span className="submenu-title-wrapper">QSPECT</span>} key="1">
-    <MenuItem key="1-1">About</MenuItem>
+    <MenuItem key="1-1" onClick={handleAboutCommand}>About</MenuItem>
   </SubMenu>,
   <SubMenu title={<span className="submenu-title-wrapper">File</span>} key="2">
     <MenuItem key="2-1">New</MenuItem>
     <Divider />
-    <MenuItem key="2-2">Open</MenuItem>
+    <MenuItem key="2-2">
+    <input className="uicomponent" id="open_file_input" type="file" 
+    multiple="" style={{display: 'none', opacity: 1}} 
+    onChange={handleOpenCommand} />
+      <label htmlFor="open_file_input" >Open</label>
+    </MenuItem>
     <MenuItem key="2-3">Save</MenuItem>
     <MenuItem key="2-4">Save As</MenuItem>
     <Divider />
@@ -71,6 +88,7 @@ const children = [
     <MenuItem key="2-9">Close</MenuItem>
     <Divider />
     <MenuItem key="2-10">Exit</MenuItem>
+  
   </SubMenu>,
   <MenuItem key="3">Edit</MenuItem>,
 
@@ -111,15 +129,12 @@ const children = [
         <span className="submenu-title-wrapper">Colormap</span>
       }
     >
-      <MenuItem key="5-1-0"><input type="radio" name="colormap" value="greyscale"/>Greyscale</MenuItem>
-      <MenuItem key="5-1-1"><input type="radio" name="colormap" value="hotiron"/>Hot Iron</MenuItem>
-      <MenuItem key="5-1-2"><input type="radio" name="colormap" value="pet"/>PET</MenuItem>
-      <MenuItem key="5-1-3"><input type="radio" name="colormap" value="hotmetalblue"/>Hot Metal Blue</MenuItem>
-      <MenuItem key="5-1-4"><input type="radio" name="colormap" value="pet20"/>PET20</MenuItem>
-      <MenuItem key="5-1-5"><input type="radio" name="colormap" value="spring"/>Spring</MenuItem>
-      <MenuItem key="5-1-6"><input type="radio" name="colormap" value="summer"/>Summer</MenuItem>
-      <MenuItem key="5-1-7"><input type="radio" name="colormap" value="fall"/>Fall</MenuItem>
-      <MenuItem key="5-1-8"><input type="radio" name="colormap" value="winter"/>Winter</MenuItem>
+      <MenuItem key="5-1-0"><input type="radio" id="5-greyscale" name="5-colormap" value="greyscale"/><label htmlFor="5-greyscale">Greyscale</label></MenuItem>
+      <MenuItem key="5-1-1"><input type="radio" id="5-hotiron" name="5-colormap" value="hotiron"/><label htmlFor="5-hotiron">Hot Iron</label></MenuItem>
+      <MenuItem key="5-1-2"><input type="radio" id="5-pet" name="5-colormap" value="pet"/><label htmlFor="5-pet">PET</label></MenuItem>
+      <MenuItem key="5-1-3"><input type="radio" id="5-hotmetalblue" name="5-colormap" value="hotmetalblue"/><label htmlFor="5-hotmetalblue">Hot Metal Blue</label></MenuItem>
+      <MenuItem key="5-1-4"><input type="radio" id="5-pet20" name="5-colormap" value="pet20"/><label htmlFor="5-pet20">PET20</label></MenuItem>
+      
       <Divider />
       <MenuItem key="5-1-9">Show Color Map</MenuItem>
     </SubMenu>
@@ -137,37 +152,38 @@ const children = [
         <span className="submenu-title-wrapper">Colormap</span>
       }
     >
-      <MenuItem key="6-1-0"><input type="radio" name="colormap" value="greyscale"/>Greyscale</MenuItem>
-      <MenuItem key="6-1-1"><input type="radio" name="colormap" value="hotiron"/>Hot Iron</MenuItem>
-      <MenuItem key="6-1-2"><input type="radio" name="colormap" value="pet"/>PET</MenuItem>
-      <MenuItem key="6-1-3"><input type="radio" name="colormap" value="hotmetalblue"/>Hot Metal Blue</MenuItem>
-      <MenuItem key="6-1-4"><input type="radio" name="colormap" value="pet20"/>PET20</MenuItem>
-      <MenuItem key="6-1-5"><input type="radio" name="colormap" value="spring"/>Spring</MenuItem>
-      <MenuItem key="6-1-6"><input type="radio" name="colormap" value="summer"/>Summer</MenuItem>
-      <MenuItem key="6-1-7"><input type="radio" name="colormap" value="fall"/>Fall</MenuItem>
-      <MenuItem key="6-1-8"><input type="radio" name="colormap" value="winter"/>Winter</MenuItem>
+      <MenuItem key="6-1-0"><input type="radio" id="6-greyscale" name="6-colormap" value="greyscale"/><label htmlFor="6-greyscale">Greyscale</label></MenuItem>
+      <MenuItem key="6-1-1"><input type="radio" id="6-hotiron" name="6-colormap" value="hotiron"/><label htmlFor="6-hotiron">Hot Iron</label></MenuItem>
+      <MenuItem key="6-1-2"><input type="radio" id="6-pet" name="6-colormap" value="pet"/><label htmlFor="6-pet">PET</label></MenuItem>
+      <MenuItem key="6-1-3"><input type="radio" id="6-hotmetalblue" name="6-colormap" value="hotmetalblue"/><label htmlFor="6-hotmetalblue">Hot Metal Blue</label></MenuItem>
+      <MenuItem key="6-1-4"><input type="radio" id="6-pet20" name="6-colormap" value="pet20"/><label htmlFor="6-pet20">PET20</label></MenuItem>
+      
       <Divider />
       <MenuItem key="6-1-9">Show Color Map</MenuItem>
     </SubMenu>
   </SubMenu>,
 
   <MenuItem key="7">ROI</MenuItem>
+  
 ];
 
-//append to document.getElementById("centerpanel")
-const Menubar = ({ }) => (
+
+return (
   <>
-    <div className="uicomponent menubar ActionButton">
-      <div className="uicomponent menubarright">
+    <div className="uicomponent menubar">
+      <div className="uicomponent menubarright ActionButton">
         <Menu className="uicomponent menubar menubarleft"
           onClick={handleClick}
           mode="horizontal"
         >
           {children}
         </Menu>
+        
       </div>
     </div>
   </>
-);
+  );
+};
+
 
 export default Menubar;
