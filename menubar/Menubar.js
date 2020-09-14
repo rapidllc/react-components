@@ -13,63 +13,68 @@ const Menubar = ({
   handleAboutCommand,
   handleNewCommand,
   handleOpenCommand,
-  handleUploadEvent
+    handleRestoreAll,
+    handleMinimizeAll,
+    handleChangeColormap,
+    handleShowColormap,
+    handleShowCursors,
+    handleShowValue,
+    handleShowStats,
+    handleTileWindows,
+    handleExit,
+    handleLogin
+
  }) => {
-
  
-
 const animation = {
-  // enter(node, done) {
-  //   let height;
-  //   return animate(node, 'rc-menu-collapse', {
-  //     start() {
-  //       height = node.offsetHeight;
-  //       node.style.height = 0;
-  //     },
-  //     active() {
-  //       node.style.height = `${height}px`;
-  //     },
-  //     end() {
-  //       node.style.height = '';
-  //       done();
-  //     },
-  //   });
-  // },
+  enter(node, done) {
+    let height;
+    return animate(node, 'rc-menu-collapse', {
+      start() {
+        height = node.offsetHeight;
+        node.style.height = 0;
+      },
+      active() {
+        node.style.height = `${height}px`;
+      },
+      end() {
+        node.style.height = '';
+        done();
+      },
+    });
+  },
 
-  // appear() {
-  //   return this.enter.apply(this, arguments);
-  // },
+  appear() {
+    return this.enter.apply(this, arguments);
+  },
 
-  // leave(node, done) {
-  //   return animate(node, 'rc-menu-collapse', {
-  //     start() {
-  //       node.style.height = `${node.offsetHeight}px`;
-  //     },
-  //     active() {
-  //       node.style.height = 0;
-  //     },
-  //     end() {
-  //       node.style.height = '';
-  //       done();
-  //     },
-  //   });
-  // },
+  leave(node, done) {
+    return animate(node, 'rc-menu-collapse', {
+      start() {
+        node.style.height = `${node.offsetHeight}px`;
+      },
+      active() {
+        node.style.height = 0;
+      },
+      end() {
+        node.style.height = '';
+        done();
+      },
+    });
+  },
 };
-
 
 function handleClick(info) {
   console.log(`clicked ${info.key}`);
   console.log(info);
 }
-
-
+ 
 const children = [
-
   <SubMenu title={<span className="submenu-title-wrapper">QSPECT</span>} key="1">
     <MenuItem key="1-1" onClick={handleAboutCommand}>About</MenuItem>
   </SubMenu>,
   <SubMenu title={<span className="submenu-title-wrapper">File</span>} key="2">
-    <MenuItem key="2-1">New</MenuItem>
+    <MenuItem key="2-1" onClick={handleNewCommand}>New</MenuItem>
     <Divider />
     <MenuItem key="2-2">
     <input className="uicomponent" id="open_file_input" type="file" 
@@ -91,8 +96,7 @@ const children = [
   
   </SubMenu>,
   <MenuItem key="3">Edit</MenuItem>,
-
-
+ 
   <SubMenu title={<span className="submenu-title-wrapper">Window</span>} key="4">
     <MenuItem key="4-1">Duplicate</MenuItem>
     <Divider />
@@ -102,8 +106,8 @@ const children = [
     <MenuItem key="4-4">Minimize</MenuItem>
     <MenuItem key="4-5">Maximize</MenuItem>
     <Divider />
-    <MenuItem key="4-6">Minimize All</MenuItem>
-    <MenuItem key="4-7">Restore All</MenuItem>
+    <MenuItem key="4-6" onClick={handleRestoreAll,handleMinimizeAll}>Minimize All</MenuItem>
+    <MenuItem key="4-7" onClick={handleRestoreAll}>Restore All</MenuItem>
     <Divider />
     <MenuItem key="4-8">Hide Title Bar</MenuItem>
     <MenuItem key="4-9">Hide Status Bar</MenuItem>
@@ -162,11 +166,9 @@ const children = [
       <MenuItem key="6-1-9">Show Color Map</MenuItem>
     </SubMenu>
   </SubMenu>,
-
   <MenuItem key="7">ROI</MenuItem>
   
 ];
-
 
 return (
   <>
@@ -178,7 +180,6 @@ return (
         >
           {children}
         </Menu>
-        
       </div>
     </div>
   </>
