@@ -22,7 +22,9 @@ const Menubar = ({
     handleShowStats,
     handleTileWindows,
     handleExit,
-    handleLogin
+    handleLogin,
+    handleCloseWindow,
+    handleViewTypeCommand 
 
  }) => {
  
@@ -116,7 +118,7 @@ const children = [
     <MenuItem key="4-11">Show Right Panel</MenuItem>
     <MenuItem key="4-12">Show Panels</MenuItem>
     <Divider />
-    <MenuItem key="4-13">Close</MenuItem>
+    <MenuItem key="4-13" onClick={handleCloseWindow}>Close</MenuItem>
     <MenuItem key="4-14">Close All</MenuItem>
   </SubMenu>,
 
@@ -126,7 +128,7 @@ const children = [
     }
     key="5"
     popupOffset={[10, 15]}
-  >
+  >    
     <SubMenu
       key="5-1"
       title={
@@ -138,10 +140,16 @@ const children = [
       <MenuItem key="5-1-2"><input type="radio" id="5-pet" name="5-colormap" value="pet"/><label htmlFor="5-pet">PET</label></MenuItem>
       <MenuItem key="5-1-3"><input type="radio" id="5-hotmetalblue" name="5-colormap" value="hotmetalblue"/><label htmlFor="5-hotmetalblue">Hot Metal Blue</label></MenuItem>
       <MenuItem key="5-1-4"><input type="radio" id="5-pet20" name="5-colormap" value="pet20"/><label htmlFor="5-pet20">PET20</label></MenuItem>
-      
       <Divider />
       <MenuItem key="5-1-9">Show Color Map</MenuItem>
-    </SubMenu>
+    </SubMenu>   
+    <Divider />
+    <MenuItem key="5-1-10" ><input onChange={() => handleViewTypeCommand("StackedView")} type="radio" id="5-stacked" name="5-segment-view" value="greyscale"/><label htmlFor="5-stacked">Stacked</label></MenuItem>
+    <MenuItem key="5-1-11" ><input onChange={() => handleViewTypeCommand("TiledView")} type="radio" id="5-tiled" name="5-segment-view" value="tiled"/><label htmlFor="5-tiled">Tiled</label></MenuItem>
+    <MenuItem key="5-1-12" ><input onChange={() => handleViewTypeCommand("OrthoView")} type="radio" id="5-orthogonal" name="5-segment-view" value="orthogonal"/><label htmlFor="5-orthogonal">Orthongonal</label></MenuItem>
+    <Divider />
+    <MenuItem key="5-1-13" >Show Cursors</MenuItem>
+    <MenuItem key="5-1-14" >Show Value</MenuItem>
   </SubMenu>,
   <SubMenu
     title={
