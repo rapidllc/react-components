@@ -172,8 +172,7 @@ const children = [
 
 return (
   <>
-    <div className="uicomponent menubar">
-      <div className="uicomponent menubarright ActionButton">
+      <div className="uicomponent menubar menubarleft">
         <Menu className="uicomponent menubar menubarleft"
           onClick={handleClick}
           mode="horizontal"
@@ -181,7 +180,6 @@ return (
           {children}
         </Menu>
       </div>
-    </div>
   </>
   );
 };
