@@ -12,10 +12,9 @@ import '../button/Button.scss';
 
 import ProgressBar from '../progressbar/ProgressBar.js';
 
-
-
 const ReconhtmlForm = ({
   handleSelectProjectionsFile,
+  handleSelectAttenuationFile,
   handleAttenuationCompensations,
   handleAttenuationScatterCompensations,
   handleCollimatorCompensations,
@@ -27,6 +26,7 @@ const ReconhtmlForm = ({
 }) => {
 
   const [projectionsFile, setProjectionsFile] = useState('.dcm');
+  const [attenuationFile, setAttenuationFile] = useState('.dcm');
   const [radioChangeAttenuation, setRadioChangeAttenuation] = useState('NoAttenuation');
   const [radioChangeCDR, setRadioChangeCDR] = useState('NoCDR');
 
@@ -105,12 +105,12 @@ const ReconhtmlForm = ({
   return (
     <>
       <fieldset id="recon_form_component">
-        <ActionButton red children={"Select .dcm"} onClick={handleSelectProjectionsFile} />
+        <ActionButton red children={"Select Projections File"} onClick={handleSelectProjectionsFile} />
         <br />
-        <label className="BaseField__label" htmlFor="Projectionsfile">Projections File:
+        {/* <label className="BaseField__label" htmlFor="Projectionsfile">Projections File: */}
           <input type="text" className="Input" id="projections_file_input" name="Projectionsfile" value={projectionsFile}
             onChange={() => setProjectionsFile(value)} />
-        </label>
+        {/* </label> */}
 
         <label className="BaseField__label" htmlFor="Radionuclide">Radionuclide:
         <select className="Select__select" name="Radionuclide" placeholder=""
@@ -189,13 +189,13 @@ const ReconhtmlForm = ({
        
         <hr />
         <br />
-        <ActionButton red children={"Select .dcm"} onClick={handleSelectProjectionsFile} />
+        <ActionButton red children={"Select Attenuation File"} onClick={handleSelectAttenuationFile} />
         <br />
-        <label className="BaseField__label" htmlFor="Attenuationfile">Attenuation File:
-          <input type="text" className="Input" name="Attenuationfile"
-            value={projectionsFile} onChange={() => setProjectionsFile(value)}
+        {/* <label className="BaseField__label" htmlFor="Attenuationfile">Attenuation File: */}
+          <input type="text" className="Input" id="attenuation_file_input"  name="Attenuationfile"
+            value={attenuationFile} onChange={() => setAttenuationFile(value)}
           />
-        </label>
+        {/* </label> */}
         
         <ActionButton red children={"Reconstruct"} onClick={handleReconButton} />
         
