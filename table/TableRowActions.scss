@@ -1,0 +1,35 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.TableRowActions {
+  &__tooltip {
+    .rc-tooltip-arrow {
+      display: none;
+    }
+
+    .rc-tooltip-inner {
+      padding: 0;
+      border-radius: $borderRadius;
+    }
+  }
+
+  &__menu {
+    min-width: 200px;
+    padding: 0;
+  }
+}
+
+.TableRowActions-menuItem {
+  border-bottom: 1px solid $border;
+
+  cursor: pointer;
+  padding: $paddingSmall;
+
+  &:hover {
+    color: $orange;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

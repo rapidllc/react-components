@@ -1,0 +1,17 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.ImageButton {
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 4px;
+  border: $borderWidth solid $white;
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+
+  &:hover {
+    border: $borderWidth solid $orange;
+    border-radius: 2px;
+  }
+}

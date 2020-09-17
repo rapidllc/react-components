@@ -1,0 +1,40 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.Table {
+	position: relative;
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0 auto;
+	background-color: $white;
+	border-radius: 4px;
+  font-family: $fontFamily;
+  table-layout: fixed;
+
+  &--border {
+    border: $borderWidth solid $border;
+  }
+
+  &--scrollable {
+    margin-top: -(2 * $padding + 15px);
+  }
+}
+
+.Table-Body {
+  &--scrollable {
+    height: 539px;
+    overflow: auto;
+    border-bottom: $borderWidth solid $border;
+  }
+
+  &--scrollable-horizontal {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+}
+
+.Table-Head {
+  &--sticky {
+    border-right: 17px solid $border;
+  }
+}

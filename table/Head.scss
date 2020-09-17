@@ -1,0 +1,79 @@
+@import "../assets/stylesheets/colors.scss";
+@import "../assets/stylesheets/variables.scss";
+
+.Head {
+  border-bottom: 2px solid $border;
+  text-transform: uppercase;
+  font-size: $fontSizeH7;
+  font-weight: 700;
+  color: $text_2;
+
+  &__item,
+  &__action_item {
+    box-sizing: border-box;
+    padding: $padding;
+    position: relative;
+    text-align: left;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:hover {
+      overflow: visible;
+      white-space: normal;
+    }
+
+    &--sortable {
+      cursor: pointer;
+      padding-left: 2 * $padding;
+    }
+
+    &--narrow, &--no-cell-padding {
+      padding: ($padding) 4px;
+    }
+
+    @for $i from 1 through 20 {
+      &--width-#{$i*5} {
+        width : #{$i*5%};
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &--width-#{$i*50}px {
+        width : #{$i*50px};
+      }
+    }
+  }
+
+  &__action_item {
+    text-align: right;
+    width: 185px;
+  }
+
+  &__sort {
+    position: absolute;
+    left: $padding;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+
+    &--up {
+      top: $padding - 4px;
+      border-color: transparent transparent $border transparent;
+    }
+
+    &--upActive {
+      border-color: transparent transparent $cta transparent;
+    }
+
+    &--down {
+      top: $padding + 8px;
+      border-color: $border transparent transparent transparent;
+    }
+
+    &--downActive {
+      border-color: $cta transparent transparent transparent;
+    }
+  }
+}
