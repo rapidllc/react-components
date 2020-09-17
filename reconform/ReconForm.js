@@ -111,7 +111,6 @@ const ReconhtmlForm = ({
           <input type="text" className="Input" id="projections_file_input" name="Projectionsfile" value={projectionsFile}
             onChange={() => setProjectionsFile(value)} />
         {/* </label> */}
-
         <label className="BaseField__label" htmlFor="Radionuclide">Radionuclide:
         <select className="Select__select" name="Radionuclide" placeholder=""
             onChange={handleRadionuclide}>

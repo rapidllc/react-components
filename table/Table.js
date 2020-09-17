@@ -130,7 +130,7 @@ Table.propTypes = {
     title: PropTypes.node,
     onClick: PropTypes.func,
   })),
-  canEdit: PropTypes.func.isRequired,
+  canEdit: PropTypes.func,
 };
 
 export default Table;

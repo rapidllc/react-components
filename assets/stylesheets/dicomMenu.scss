@@ -1,0 +1,254 @@
+/* menubar.css -  MenuBar styles */
+@import "./variables.scss";
+
+
+
+div.dicommenubar,
+.uicomponent.dicommenubar
+{
+	height: 44px;
+	align-items: center;
+	//background-color: inherit;
+	//border-bottom-color: inherit;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	box-sizing: border-box;
+	//color: inherit;
+	cursor: default;
+	display: flex;
+	flex-direction: row;
+	//flex-wrap: wrap;
+	font-family:  inherit;
+	//font-size: 11pt;
+	font-weight: normal;
+	justify-content: space-between;
+	min-height: 72px; //1.5em;
+	order: 1;
+	padding: 0px;
+	width: 100%;
+	z-index: 100;
+}
+
+ 
+div.menubarright,
+.uicomponent.menubarright
+{
+	//background-color: inherit;
+	border-style: none;
+	box-sizing: border-box;
+	//color: inherit;
+	cursor: default;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-family: inherit; 
+	font-size: inherit;
+	font-weight: inherit;;
+	min-height: inherit;
+}
+div.menubarright,
+.uicomponent.menubarright
+{
+	justify-content: flex-end;
+}
+
+// div.menubarleft,
+// .uicomponent.menubarleft,
+// {
+// 	justify-content: flex-start;
+// }
+
+
+/* menuitem.css - MenuItem styles */
+
+.dicommenuitem,
+.uicomponent.dicommenuitem
+{
+	//background-color: inherit;
+	//border-color: inherit;
+	border-style: none;
+//	color: inherit;
+	outline: none;
+	width: 100%;
+	font-size: 10pt;
+	line-height: 150%;
+}
+.dicommenuitem:hover
+{
+	background-color:#404040; //RGB(var(--gray));
+	border-style: inherit;
+}
+.dicommenuitem:first-child
+{
+	//border-style: inherit;
+	// border-top-right-radius: inherit; 
+	// border-top-left-radius: inherit; 
+}
+.dicommenuitem:first-child:hover
+{
+	//border-style: inherit;
+	border-top-right-radius: 4px;
+}
+.dicommenuitem:last-child
+{
+	//border-style: inherit;
+	// border-bottom-left-radius: inherit;
+	// border-bottom-right-radius: inherit; 
+}
+.dicommenuitem:last-child:hover
+{
+	//border-style: inherit;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px; 
+}
+.dicombuttonmenuitem,
+.uicomponent.dicommenuitem.dicombuttonmenutem
+{
+	font-family: inherit;
+	text-align: left;
+}
+.dicomcheckboxmenuitem,
+.uicomponent.dicommenuitem.dicomcheckboxmenuitem
+{
+	align-items:center;
+	box-sizing: border-box;
+	display:flex;
+	flex-direction:row;
+	justify-content: flex-start;
+}
+.dicomcheckboxmenuitem label
+{
+	flex-grow: 1;
+	line-height: 200%;
+}
+.dicomradiogroup,
+.uicomponent.dicomradiogroup
+{
+	background-color: inherit;
+}
+.dicomradiomenuitem,
+.uicomponent.dicommenuitem.dicomradiomenuitem
+{
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	line-height: 200%;
+}
+.dicomseparatormenuitem,
+.uicomponent.dicommenuitem.dicomseparatormenuitem
+{
+	background-color: inherit;
+//	border-style: inherit;
+	padding: 0px;
+}
+.dicomseparatormenuitem:hover,
+.uicomponent.dicommenuitem.dicomseparatormenuitem:hover
+{
+	background-color: inherit;
+//	border-style: inherit;
+}
+
+
+//menu.css
+/* menu.css - Menu styles */
+
+div.dicommenu,
+.uicomponent.dicommenu
+{
+	//background-color: inherit;
+	//border-color: inherit;
+	border-style: none;
+	border-width: inherit;
+	box-sizing: border-box;
+//	color: inherit;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	min-height: inherit;
+	position: relative;
+}
+.dicommenutitle,
+.uicomponent.dicommenutitle
+{
+//	background-color: inherit;
+//	border-color: inherit;
+	border-style: none;
+	border-width: inherit;
+	box-sizing: border-box;
+ 
+//	color: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: inherit;
+	padding: 0px 1em;
+}
+.dicommenutitlehover
+{
+ 
+	background-color: #737373;// RGB(var(--gray));
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+div.dicommenuitems,
+.uicomponent.dicommenuitems
+{
+	background-color: #737373;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-color: inherit;
+	border-style: none;
+	border-top-right-radius: 4px;
+	border-width: inherit;
+	//box-shadow: 0em .4em 1em 0em RGBa(128,128,128,.4);
+	color: inherit;
+	display: none;
+	font-size: 10pt;
+	min-width: 10em;
+	padding: 0em;
+}
+div.dicomsubmenu,
+.uicomponent.dicomsubmenu
+{
+ 	background-color: inherit;
+//color: #D6634A;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+div.dicomsubmenu:last-child
+{
+	// border-bottom-left-radius: inherit;
+	// border-bottom-right-radius: inherit; 
+}
+.dicomsubmenutitle
+{
+	background-color: inherit;
+	border: none;
+	box-sizing: border-box;
+	color: inherit;
+	display: flex;
+	flex-direction: row;
+	font-size: inherit;
+	height: 100%;
+	justify-content: space-between;
+	min-height: inherit;
+	outline: none;
+	padding: 5px 0px 5px 5px;
+	width: 100%;
+}
+.dicomsubmenutitlehover
+{
+ 	background-color: RGB(var(--gray));
+}
+.dicomsubmenumarker 
+{
+}
+.dicomsubmenumarker:before{
+	content:"\25b6";
+}

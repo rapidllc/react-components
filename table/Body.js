@@ -111,7 +111,7 @@ Body.propTypes = {
   noCellPadding: PropTypes.bool,
   getRowClassName: PropTypes.func.isRequired,
   noRecordsMessage: PropTypes.string,
-  canEdit: PropTypes.func.isRequired,
+  canEdit: PropTypes.func,
 };
 
 export default Body;

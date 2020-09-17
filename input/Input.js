@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import './Input.scss';
-import BaseField from './BaseField.scss';
+import BaseField from '../basefield/BaseField.scss';
 
 const Input = (props) => {
   const {
