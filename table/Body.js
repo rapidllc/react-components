@@ -26,13 +26,17 @@ const Body = ({
   canEdit,
 }) => {
   const showActionsColumn = (onEdit || onShow || onDelete || onDuplicate || actions);
-  const totalColumns = showActionsColumn ? columns.length + 1 : columns.length;
+  const totalColumns = 2;//showActionsColumn ? columns.length + 1 : columns.length;
 
+  console.log('Body --- ',data)
+ 
   return (
     <tbody className="Body">
       {data.length ? data.map((item, rowIndex) => (
         <tr className={`Body-Row ${getRowClassName(item, { row: rowIndex })}`} key={`${item.id}`}>
-          {columns.map((col, colIndex) => (
+          {columns.map((col, colIndex) => {
+            
+            (
             <td
               className={classNames(
                 'Body-Row__item', {
@@ -43,9 +47,9 @@ const Body = ({
               )}
               key={`${col.name}_${item.id}`}
             >
-              {col.getValue(item, { row: rowIndex, col: colIndex })}
+              {col.name}
             </td>
-          ))}
+          )})}
           { showActionsColumn &&
             <td className="Body-Row__action_item">
               {canEdit(item) && onEdit &&

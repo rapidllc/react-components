@@ -30,6 +30,9 @@ const Table = ({
 }) => {
   const showActions = Boolean(onEdit || onShow || onDelete || onDuplicate);
 
+
+  console.log('Table columns ', columns)
+  console.log('Table data ', data)
   return (
     <div>
       {
