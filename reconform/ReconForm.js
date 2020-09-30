@@ -22,10 +22,11 @@ const ReconhtmlForm = ({
   handleRadionuclide,
   handleScanner,
   handleCollimator,
-  handleWindow
+  handleReconProtocol
 }) => {
 
   const [projectionsFile, setProjectionsFile] = useState('.dcm');
+  const [iterations, setIterations] = useState(1);
   const [attenuationFile, setAttenuationFile] = useState('.dcm');
   const [radioChangeAttenuation, setRadioChangeAttenuation] = useState('NoAttenuation');
   const [radioChangeCDR, setRadioChangeCDR] = useState('NoCDR');
@@ -93,6 +94,11 @@ const ReconhtmlForm = ({
     },
   ];
 
+  const reconProtocols = [{
+    value: "Y90_100keV_300keV",
+    text: "Y90_100keV_300keV"
+  }];
+
   const groupedOptions = {};
   scanner.forEach(option => {
     if (!groupedOptions[option.optgroup]) groupedOptions[option.optgroup] = [];
@@ -130,13 +136,17 @@ const ReconhtmlForm = ({
           </select>
         </label>
 
-        <label className="BaseField__label" htmlFor="Window">Window:
-        <select className="Select__select" name="Window" placeholder=""
-            onChange={handleWindow}>
+        <label className="BaseField__label" htmlFor="Protocol">Protocol:
+        <select className="Select__select" name="Protocol" placeholder=""
+            onChange={handleReconProtocol}>
             <option value="">None</option>
-            <option value="Lu-177_w1">Lu-177_w1</option>
-            <option value="Lu-177_w2">Lu-177_w2</option>
+            <option value="'Y90_100keV_300keV'">Y90_100keV_300keV</option>
           </select>
+        </label>
+
+        <label className="BaseField__label" htmlFor="Iterations">Number of Iterations:
+        <input type="number" className="Input" id="number_of_iterations_input" name="Iterations" min="1"
+            onChange={setIterations} />
         </label>
 
         <div>
