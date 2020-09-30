@@ -18,6 +18,7 @@ const ReconhtmlForm = ({
   handleAttenuationCompensations,
   handleAttenuationScatterCompensations,
   handleCollimatorCompensations,
+  handleIterations,
   handleReconButton,
   handleRadionuclide,
   handleScanner,
@@ -140,13 +141,13 @@ const ReconhtmlForm = ({
         <select className="Select__select" name="Protocol" placeholder=""
             onChange={handleReconProtocol}>
             <option value="">None</option>
-            <option value="'Y90_100keV_300keV'">Y90_100keV_300keV</option>
+            <option value="Y90_100keV_300keV">Y90_100keV_300keV</option>
           </select>
         </label>
 
         <label className="BaseField__label" htmlFor="Iterations">Number of Iterations:
         <input type="number" className="Input" id="number_of_iterations_input" name="Iterations" min="1"
-            onChange={setIterations} />
+            onChange={handleIterations} />
         </label>
 
         <div>
