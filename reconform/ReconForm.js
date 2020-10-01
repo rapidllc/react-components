@@ -9,14 +9,13 @@ import ActionButton from '../button/Button.js';
 import Select from '../select/Select.js';
 import SelectOptGroups from '../select/SelectOptGroups.js';
 import '../button/Button.scss';
-
-import ProgressBar from '../progressbar/ProgressBar.js';
-
+ 
 const ReconhtmlForm = ({
   handleSelectProjectionsFile,
   handleSelectAttenuationFile,
   handleAttenuationCompensations,
   handleAttenuationScatterCompensations,
+
   handleCollimatorCompensations,
   handleIterations,
   handleReconButton,
@@ -42,14 +41,15 @@ const ReconhtmlForm = ({
     const radioValue = event.target.value;
     if(radioValue === "Attenuation") {
       setRadioChangeAttenuation(radioValue);
-      handleAttenuationCompensations(event);
-    } else if(radioValue === "AttenuationScatter") {
+      handleAttenuationCompensations(true);
+    } else if (radioValue === "AttenuationScatter") {
       setRadioChangeAttenuation(radioValue);
-      handleAttenuationScatterCompensations(event);
+      handleAttenuationScatterCompensations(true);
     } else {
-      //clear all setting for compensations
+      console.log("NoAttenuation");
       setRadioChangeAttenuation(radioValue);
-    }
+      handleAttenuationScatterCompensations(false);
+     }
   }
 
   const radionuclide = [
