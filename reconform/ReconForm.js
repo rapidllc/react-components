@@ -25,7 +25,7 @@ const ReconhtmlForm = ({
   handleReconProtocol
 }) => {
 
-  const [projectionsFile, setProjectionsFile] = useState('.dcm');
+  const [projectionsFile, setProjectionsFile] = useState('');
   const [iterations, setIterations] = useState(1);
   const [attenuationFile, setAttenuationFile] = useState('.dcm');
   const [radioChangeAttenuation, setRadioChangeAttenuation] = useState('NoAttenuation');
@@ -115,9 +115,10 @@ const ReconhtmlForm = ({
         <ActionButton red children={"Select Projections File"} onClick={handleSelectProjectionsFile} />
         <br />
         {/* <label className="BaseField__label" htmlFor="Projectionsfile">Projections File: */}
-          <input type="text" className="Input" id="projections_file_input" name="Projectionsfile" value={projectionsFile}
+          <input type="hidden" className="Input" id="projections_file_input" name="Projectionsfile" value={projectionsFile}
             onChange={() => setProjectionsFile(value)} />
         {/* </label> */}
+        <br />
         <label className="BaseField__label" htmlFor="Radionuclide">Radionuclide:
         <select className="Select__select" name="Radionuclide" placeholder=""
             onChange={handleRadionuclide}>
