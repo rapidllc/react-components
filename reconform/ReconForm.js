@@ -9,7 +9,7 @@ import ActionButton from '../button/Button.js';
 import Select from '../select/Select.js';
 import SelectOptGroups from '../select/SelectOptGroups.js';
 import '../button/Button.scss';
- 
+
 const ReconhtmlForm = ({
   handleSelectProjectionsFile,
   handleSelectAttenuationFile,
@@ -39,7 +39,7 @@ const ReconhtmlForm = ({
 
   const SetRadioChangeAttenuation = (event) => {
     const radioValue = event.target.value;
-    if(radioValue === "Attenuation") {
+    if (radioValue === "Attenuation") {
       setRadioChangeAttenuation(radioValue);
       handleAttenuationCompensations(true);
     } else if (radioValue === "AttenuationScatter") {
@@ -49,7 +49,7 @@ const ReconhtmlForm = ({
       console.log("NoAttenuation");
       setRadioChangeAttenuation(radioValue);
       handleAttenuationScatterCompensations(false);
-     }
+    }
   }
 
   const radionuclide = [
@@ -115,8 +115,8 @@ const ReconhtmlForm = ({
         <ActionButton red children={"Select Projections File"} onClick={handleSelectProjectionsFile} />
         <br />
         {/* <label className="BaseField__label" htmlFor="Projectionsfile">Projections File: */}
-          <input type="hidden" className="Input" id="projections_file_input" name="Projectionsfile" value={projectionsFile}
-            onChange={() => setProjectionsFile(value)} />
+        <input type="hidden" className="Input" id="projections_file_input" name="Projectionsfile" value={projectionsFile}
+          onChange={() => setProjectionsFile(value)} />
         {/* </label> */}
         <br />
         <label className="BaseField__label" htmlFor="Radionuclide">Radionuclide:
@@ -152,64 +152,64 @@ const ReconhtmlForm = ({
         </label>
 
         <div>
-        <label className="BaseField__label" htmlFor="Window">Compensations:
+          <label className="BaseField__label" htmlFor="Window">Compensations:
         <br />  <br />
-          <label htmlFor="Attenuation" className="BaseField__label">
-            <input type="radio" id="Attenuation" name="Attenuation" value="Attenuation"
-              checked={radioChangeAttenuation === "Attenuation"}
-              onChange={SetRadioChangeAttenuation}
-            />Attenuation
+            <label htmlFor="Attenuation" className="BaseField__label">
+              <input type="radio" id="Attenuation" name="Attenuation" value="Attenuation"
+                checked={radioChangeAttenuation === "Attenuation"}
+                onChange={SetRadioChangeAttenuation}
+              />Attenuation
         </label>
-          <br />
-          <label htmlFor="AttenuationScatter" className="BaseField__label">
-            <input type="radio" id="AttenuationScatter" name="AttenuationScatter" value="AttenuationScatter"
-              checked={radioChangeAttenuation === "AttenuationScatter"}
-              onChange={SetRadioChangeAttenuation}
-            />Attenuation and Scatter
+            <br />
+            <label htmlFor="AttenuationScatter" className="BaseField__label">
+              <input type="radio" id="AttenuationScatter" name="AttenuationScatter" value="AttenuationScatter"
+                checked={radioChangeAttenuation === "AttenuationScatter"}
+                onChange={SetRadioChangeAttenuation}
+              />Attenuation and Scatter
         </label>
-          <br />
-          <label htmlFor="NoAttenuation" className="BaseField__label">
-            <input type="radio" id="NoAttenuation" name="NoAttenuation" value="NoAttenuation"
-              checked={radioChangeAttenuation === "NoAttenuation"}
-              onChange={SetRadioChangeAttenuation}
-            />No Compensations
+            <br />
+            <label htmlFor="NoAttenuation" className="BaseField__label">
+              <input type="radio" id="NoAttenuation" name="NoAttenuation" value="NoAttenuation"
+                checked={radioChangeAttenuation === "NoAttenuation"}
+                onChange={SetRadioChangeAttenuation}
+              />No Compensations
         </label>
-        <hr />
-          <label htmlFor="FullCDR" className="BaseField__label">
-            <input type="radio" id="FullCDR" name="FullCDR" value="FullCDR"
-              checked={radioChangeCDR === "FullCDR"}
-              onChange={SetRadioChangeCDR}
-            />Full CDR
+            <hr />
+            <label htmlFor="FullCDR" className="BaseField__label">
+              <input type="radio" id="FullCDR" name="FullCDR" value="FullCDR"
+                checked={radioChangeCDR === "FullCDR"}
+                onChange={SetRadioChangeCDR}
+              />Full CDR
         </label>
-          <br />
-          <label htmlFor="GeometricCDR" className="BaseField__label">
-            <input type="radio" id="GeometricCDR" name="GeometricCDR" value="GeometricCDR"
-              checked={radioChangeCDR === "GeometricCDR"}
-              onChange={SetRadioChangeCDR}
-            />Geometric CDR
+            <br />
+            <label htmlFor="GeometricCDR" className="BaseField__label">
+              <input type="radio" id="GeometricCDR" name="GeometricCDR" value="GeometricCDR"
+                checked={radioChangeCDR === "GeometricCDR"}
+                onChange={SetRadioChangeCDR}
+              />Geometric CDR
         </label>
-          <br />
-          <label htmlFor="NoCDR" className="BaseField__label">
-            <input type="radio" id="NoCDR" name="NoCDR" value="NoCDR"
-              checked={radioChangeCDR === "NoCDR"}
-              onChange={SetRadioChangeCDR}
-            />No CDR
+            <br />
+            <label htmlFor="NoCDR" className="BaseField__label">
+              <input type="radio" id="NoCDR" name="NoCDR" value="NoCDR"
+                checked={radioChangeCDR === "NoCDR"}
+                onChange={SetRadioChangeCDR}
+              />No CDR
         </label>
-        </label>
+          </label>
         </div>
-       
+
         <hr />
         <br />
         <ActionButton red children={"Select Attenuation File"} onClick={handleSelectAttenuationFile} />
         <br />
         {/* <label className="BaseField__label" htmlFor="Attenuationfile">Attenuation File: */}
-          <input type="text" className="Input" id="attenuation_file_input"  name="Attenuationfile"
-            value={attenuationFile} onChange={() => setAttenuationFile(value)}
-          />
+        <input type="text" className="Input" id="attenuation_file_input" name="Attenuationfile"
+          value={attenuationFile} onChange={() => setAttenuationFile(value)}
+        />
         {/* </label> */}
-        
-        <ActionButton red children={"Reconstruct"} onClick={handleReconButton} style={{width:'100%'}} />
-        
+
+        <ActionButton red children={"Reconstruct"} onClick={handleReconButton} style={{ width: '100%' }} />
+
       </fieldset>
     </>
   );
